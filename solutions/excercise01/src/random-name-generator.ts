@@ -3,7 +3,7 @@ const NAMES = ["Alex", "Şaner", "Michael", "Amir", "Birte", "Delano", "Daniel",
 /**
  * Returns a random name.
  */
-export function getRandomName(): string {
+export function getRandomName() {
   // Math.random() returns a random floating point number between 0 (including) and 1 (excluding).
   const index = Math.floor(Math.random() * NAMES.length);
   return NAMES[index];
