@@ -13,21 +13,13 @@ function mapToPingResponse([url, duration]: [string, number]) {
   return {url, duration} as PingResponse;
 }
 
+// Get all saved pings
 router.get("/", (req, res: Response<PingResponse[]>) => {
   const pings = pingService.getPings();
   res.send(pings.map(mapToPingResponse));
 });
 
-router.get("/:url", async (req, res: Response<PingResponse>, next) => {
-  try {
-    const url = req.params.url;
-    const duration = await pingService.getOrRunPingTest(url);
-    res.send({url, duration});
-  } catch (e) {
-    next(e);
-  }
-});
-
+// Run ping tests for all given URLs in parallel
 router.post("/", async (req, res: Response<PingResponse[]>, next) => {
   try {
     const urls = req.body as string[];
@@ -38,14 +30,27 @@ router.post("/", async (req, res: Response<PingResponse[]>, next) => {
   }
 });
 
-router.delete("/:url", (req, res) => {
-  const url = req.params.url;
-  pingService.deletePing(url);
+// Delete all saved pings
+router.delete("/", (req, res) => {
+  pingService.deletePings();
   res.sendStatus(204);
 });
 
-router.delete("/", (req, res) => {
-  pingService.deletePings();
+// Get or measure the ping for the given URL
+router.get("/:url", async (req, res: Response<PingResponse>, next) => {
+  try {
+    const url = req.params.url;
+    const duration = await pingService.getOrRunPingTest(url);
+    res.send({url, duration});
+  } catch (e) {
+    next(e);
+  }
+});
+
+// Delete the ping for the given URL
+router.delete("/:url", (req, res) => {
+  const url = req.params.url;
+  pingService.deletePing(url);
   res.sendStatus(204);
 });
 
