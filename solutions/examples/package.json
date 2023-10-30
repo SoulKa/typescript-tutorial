@@ -6,7 +6,7 @@
   "author": "Louis Wilke",
   "license": "ISC",
   "devDependencies": {
-    "@tsconfig/node-lts": "^18.12.5",
+    "@tsconfig/node20": "^20.1.2",
     "@types/node": "^20.8.9",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
