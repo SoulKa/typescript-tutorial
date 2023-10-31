@@ -23,8 +23,9 @@ async function pingUrl(url: string) {
 
   // execute HTTP request
   console.log("Fetching " + url);
+  const now = Date.now();
   const response = await fetch(url, {method: "GET"});
-  return response.status;
+  return [response.status, Date.now() - now] as [number, number];
 }
 
 /**
@@ -39,8 +40,8 @@ async function withTimeout<T>(promise: Promise<T>, timeout: number) {
 
 async function main() {
   console.log("Starting...");
-  const status = await withTimeout(pingUrl(URL), 1);
-  console.log(`Fetched on ${URL} with status ${status}`);
+  const [status, duration] = await withTimeout(pingUrl(URL), 1000);
+  console.log(`Fetched on ${URL} with status ${status} in ${duration}ms`);
   console.log('Stopping...');
 }
 
