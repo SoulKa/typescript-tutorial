@@ -16,8 +16,7 @@ export default class HttpClient {
     const response = await this.fetch(url, options);
     return await response.json() as T;
   }
-
-
+  
   /**
    * Executes an HTTP request and returns the response
    * @param url The URL to fetch on

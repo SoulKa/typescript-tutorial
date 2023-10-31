@@ -11,8 +11,8 @@ class UserImpl implements User, UserWithAge {
   }
 
   sayHello() {
-    console.log(`Hello ${this.name} (${this.age})`)
+    console.log(`Hello ${this.name} (${this.age})`);
   }
 }
 
-const user = new UserImpl('Marc', 42)
+const user = new UserImpl('Marc', 42);
