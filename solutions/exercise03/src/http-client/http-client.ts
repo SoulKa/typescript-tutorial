@@ -12,11 +12,11 @@ export default class HttpClient {
    * @param url The URL to fetch on
    * @param options Additional options of the request
    */
-  async fetchJson<T = any>(url: string, options = {} as Partial<FetchOptions>) {
+  async fetchJson<T = object>(url: string, options = {} as Partial<FetchOptions>) {
     const response = await this.fetch(url, options);
     return await response.json() as T;
   }
-  
+
   /**
    * Executes an HTTP request and returns the response
    * @param url The URL to fetch on
