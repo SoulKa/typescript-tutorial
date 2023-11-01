@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "Exercise 03",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Dummy API Products",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://dummyjson.com/products"
+      }
+    },
+    {
+      "name": "Get Cached Pings",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/ping"
+      }
+    },
+    {
+      "name": "Get Products",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/products"
+      }
+    },
+    {
+      "name": "Run Multiple Ping Tests",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "http://localhost:8080/ping/",
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  \"www.google.com\",\n  \"www.github.com\",\n  \"www.exxeta.com\",\n  \"www.twitter.com\",\n  \"www.facebook.com\"\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Run Ping Test",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/ping/www.github.com"
+      }
+    }
+  ],
+  "variable": []
+}
