@@ -1,9 +1,9 @@
-import PingTester from "./ping-tester";
+import HttpClient from "../http-client/http-client";
 
 export default class PingService {
 
   private readonly pings = new Map<string, number>();
-  private readonly pingTester = new PingTester();
+  private readonly httpClient = new HttpClient();
 
   /**
    * Returns the pings as an array of tuples
@@ -28,8 +28,7 @@ export default class PingService {
   setPing(url: string, duration: number) {
     this.pings.set(url, duration);
   }
-
-
+  
   /**
    * Deletes the ping for the given URL
    * @param url The URL to delete the ping for
@@ -50,7 +49,9 @@ export default class PingService {
    * @param url The URL to run the ping test for
    */
   async runPingTest(url: string) {
-    const duration = await this.pingTester.ping(url);
+    const now = Date.now();
+    await this.httpClient.fetch(url);
+    const duration = Date.now() - now;
     this.setPing(url, duration);
     return duration;
   }

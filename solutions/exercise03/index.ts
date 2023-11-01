@@ -1,6 +1,6 @@
 import express from "express"
-import pingRouter from "./src/router/ping-router";
-import productsRouter from "./src/router/products-router";
+import pingRouter from "./src/ping/ping-router";
+import productsRouter from "./src/products/products-router";
 
 const app = express();
 let port = 8080;
