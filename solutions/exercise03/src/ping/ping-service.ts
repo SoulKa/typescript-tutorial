@@ -64,7 +64,7 @@ export default class PingService {
   }
 
   /**
-   * Returns the ping for the given URL or runs a ping test if no ping is available
+   * Returns the ping for the given URL or runs a ping test if no ping is available yet
    * @param url The URL to get the ping for
    */
   async getOrRunPingTest(url: string) {
