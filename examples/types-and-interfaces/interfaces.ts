@@ -4,6 +4,8 @@ declare interface User {
 
 declare interface UserWithAge extends User {
   age: number;
+
+  isAdult(): boolean;
 }
 
 class UserImpl implements User, UserWithAge {
@@ -12,6 +14,10 @@ class UserImpl implements User, UserWithAge {
 
   sayHello() {
     console.log(`Hello ${this.name} (${this.age})`);
+  }
+
+  isAdult(): boolean {
+    return this.age > 18;
   }
 }
 

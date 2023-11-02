@@ -34,3 +34,4 @@ const event: Event = {
 if (event.payload.type === EventType.User) {
   console.log(event.payload.name);
 }
+
