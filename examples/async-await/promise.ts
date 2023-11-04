@@ -16,7 +16,7 @@ function getNumberPromiseResolve() {
 
 async function main() {
   console.log(await getNumberAsync());
-  console.log(await getNumberPromise());
+  getNumberPromise().then(number => console.log(number)).catch(console.error);
   console.log(await getNumberPromiseResolve());
 }
 
