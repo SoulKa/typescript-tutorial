@@ -15,3 +15,9 @@ console.log(Math.min(...someNumbers));
 console.log(Math.min.apply(Math, someNumbers));
 // or
 console.log(Math.min(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+// same goes for objects
+const obj = {one: 1, two: () => 2, three: "3"};
+const {one, two, three} = obj;
+console.log(one, two(), Number.parseInt(three));
+
