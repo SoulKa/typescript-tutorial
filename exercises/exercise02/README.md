@@ -13,6 +13,12 @@ This exercise tests basic knowledge about `Promises`, `async`, and `await`.
 
 ## Hints
 
+Delay a method call with `setTimeout()`:
+
+```typescript
+setTimeout(() => console.log("Hello"), 1000);
+```
+
 Static `Promise` methods:
 
 ```typescript
