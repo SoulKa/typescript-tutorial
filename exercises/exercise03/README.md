@@ -21,7 +21,7 @@ Collections in the exercise root.
 
 ## Hints
 
-**Mesuring time:**
+**Measuring time:**
 
 ```typescript
 const now = Date.now();
