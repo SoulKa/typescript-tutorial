@@ -6,7 +6,7 @@ const router = Router();
 // Fetch all products from the dummy API
 router.get("/", (req, res: Response<Product[]>) => {
   // TODO (Bonus): call httpClient.fetchJson("https://dummyjson.com/products") that returns a parsed ProductsPage as type
-  // TODO (Bonus): send the products property of the ProductsPage as response
+  // TODO (Bonus): send response with products that have a price > 1000
   res.send("NOT IMPLEMENTED" as any);
 });
 
