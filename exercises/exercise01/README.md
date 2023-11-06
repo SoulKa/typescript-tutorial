@@ -1,6 +1,7 @@
-# Exercise 01
+# Exercise 01 - Hello World
 
-This exercise is about creating functions, using default parameters, and importing modules.
+This exercise is about creating functions, using default parameters, and importing modules. We
+create a simple function that prints `"Hello <name>"` to the console.
 
 ## Tasks
 

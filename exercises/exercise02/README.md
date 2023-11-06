@@ -1,6 +1,8 @@
-# Exercise 02
+# Exercise 02 - Async Google Ping Tester
 
 This exercise tests basic knowledge about `Promises`, `async`, and `await`.
+We build a simple function that pings a given URL and returns the response time. If the URL does not
+reply within a given timeout, the function rejects with a `TimeoutError`.
 
 ## Tasks
 
