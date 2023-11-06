@@ -12,9 +12,12 @@ Collections in the exercise root.
 - [ ] fix the processing of the options in `HttpClient.fetch()`
 - [ ] implement the missing business logic of the `PingService`
 - [ ] implement the APIs in the ping router by using the `PingService`
-- [ ] Bonus: implement the generic `fetchJson()` method that automatically JSON parses the HTTP response and casts it to the given generic type
-- [ ] Bonus: export the interface `ProductsPage` so that it matches the response from `https://dummyjson.com/products`
-- [ ] Bonus: implement the `/products` API by fetching on `https://dummyjson.com/products` and returning all products that cost more than 1000
+- [ ] Bonus: implement the generic `fetchJson()` method that automatically JSON parses the HTTP
+  response and casts it to the given generic type
+- [ ] Bonus: export the interface `ProductsPage` so that it matches the response
+  from `https://dummyjson.com/products`
+- [ ] Bonus: implement the `/products` API by fetching on `https://dummyjson.com/products` and
+  returning all products that cost more than 1000
 
 ## Hints
 
@@ -32,14 +35,14 @@ const duration = Date.now() - now; // in ms
 const numbers = [1, 2, 3, 4, 5];
 
 // Using map to double each number
-const doubledNumbers = numbers.map((num) => num * 2);
+const doubledNumbers = numbers.map(num => num * 2);
 console.log("Doubled numbers:", doubledNumbers);
 
 // Using filter to find even numbers
-const evenNumbers = numbers.filter((num) => num % 2 === 0);
+const evenNumbers = numbers.filter(num => num % 2 === 0);
 console.log("Even numbers:", evenNumbers);
 
 // Using reduce to calculate the sum of all numbers
-const sum = numbers.reduce((acc, num) => acc + num, 0);
+const sum = numbers.reduce((sum, num) => sum + num, 0);
 console.log("Sum of numbers:", sum);
 ```
