@@ -48,32 +48,23 @@ export default class PingService {
   /**
    * Runs a ping test for the given URL and sets the ping
    * @param url The URL to run the ping test for
+   * @returns The duration of the ping test
    */
-  async runPingTest(url: string) {
-    const now = Date.now();
-    await this.httpClient.fetch(url);
-    const duration = Date.now() - now;
-    this.setPing(url, duration);
-    return duration;
-  }
+  // TODO: implement runPingTest() so that it runs a ping test for the given URL and sets the ping in the cache
 
 
   /**
    * Runs a ping test for the given URLs in parallel
    * @param urls The URLs to run the ping tests for
+   * @returns The durations of the ping tests
    */
-  runPingTests(urls: string[]) {
-    // TODO: implement so that it runs a ping test for each URL in parallel
-    return Promise.resolve([] as number[]);
-  }
+  // TODO: implement runPingTests() so that it runs a ping test for each URL in parallel
 
   /**
    * Returns the ping for the given URL or runs a ping test if no ping is available yet
    * @param url The URL to get the ping for
+   * @returns The ping for the given URL
    */
-  getOrRunPingTest(url: string) {
-    // TODO: implement so that it returns the ping if available or runs a ping test if not
-    return Promise.resolve(NaN);
-  }
+  // TODO: implement getOrRunPingTest() so that it returns the ping if available or runs a ping test if not
 
 }
