@@ -15,13 +15,13 @@ reply within a given timeout, the function rejects with a `TimeoutError`.
 
 ## Hints
 
-Delay a method call with `setTimeout()`:
+**Delay a method call with `setTimeout()`:**
 
 ```typescript
 setTimeout(() => console.log("Hello"), 1000);
 ```
 
-Static `Promise` methods:
+**Static `Promise` methods:**
 
 ```typescript
 Promise.resolve(1234); // resolves with 1234
@@ -30,10 +30,18 @@ Promise.all([promise1, promise2]); // resolves once all promises resolve, reject
 Promise.race([promise1, promise2]); // resolves once the first promise resolves, rejects if the first rejects
 ```
 
-Array unwrapping:
+**Array unwrapping:**
 
 ```typescript
 const array = [1, 2, 3];
 const [first, second, third] = array;
 console.log(first); // 1
+```
+
+**Measuring time:**
+
+```typescript
+const now = Date.now();
+await someAsyncMethod();
+const duration = Date.now() - now; // in ms
 ```
