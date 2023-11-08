@@ -30,9 +30,16 @@ Promise.all([promise1, promise2]); // resolves once all promises resolve, reject
 Promise.race([promise1, promise2]); // resolves once the first promise resolves, rejects if the first rejects
 ```
 
-**Array unwrapping:**
+**Object unwrapping:**
 
 ```typescript
+// with objects
+const object = {a: 1, b: "two :)", c: () => 3};
+console.log(object.a); // 1
+const {a, b, c} = object;
+console.log(a); // 1
+
+// with arrays
 const array = [1, 2, 3];
 const [first, second, third] = array;
 console.log(first); // 1
